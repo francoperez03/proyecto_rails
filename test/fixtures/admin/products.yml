@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  precio: 1.5
+  description: MyText
+  marca_id: 
+
+two:
+  codigo: MyString
+  precio: 1.5
+  description: MyText
+  marca_id: 

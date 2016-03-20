@@ -1,0 +1,19 @@
+<div class="row column text-center">
+<h2>Nuestros ultimos productos!</h2>
+<hr>
+
+<div class="row small-up-2 large-up-4">
+<% @latest_products.each do |product| %>
+  <div class="column">
+  	<img class="thumbnail" src="http://placehold.it/300x400">
+    
+    <h5><%= product.description %></h5>
+    <p><%= product.precio %></p>
+    <a href="#" class="button expanded">Comprar</a>
+  </div>
+<% end %>
+
+
+
+</div>
+<hr>

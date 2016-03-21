@@ -1,10 +1,10 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing Admin Products</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Codigo</th>
       <th>Precio</th>
       <th>Description</th>
@@ -16,13 +16,14 @@
   <tbody>
     <% @admin_products.each do |admin_product| %>
       <tr>
+        <td><%= image_tag admin_product.image.url(:main) %></td>
         <td><%= admin_product.codigo %></td>
         <td><%= admin_product.precio %></td>
         <td><%= admin_product.description %></td>
         <td><%= admin_product.marca.nombre %></td>
-        <td><%= link_to 'Show', admin_product %></td>
-        <td><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
-        <td><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', admin_product %></td>
+        <td><%= link_to 'Editar', edit_admin_product_path(admin_product) %></td>
+        <td><%= link_to 'Eliminar', admin_product, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_admin_product_path %>
+<%= link_to 'Nuevo producto', new_admin_product_path %>

@@ -18,16 +18,21 @@
 <ul class="menu">
 <li class="menu-text">Mercado Franco</li>
 <li><%= link_to 'Inicio', root_path %></li>
-<li><%= link_to 'Productos', root_path %></li>
+<li><%= link_to 'Productos', admin_products_path %></li>
 </ul>
 </div>
 <div class="top-bar-right">
 <ul class="menu">
-<li><a href="#">Iniciar Sesion</a></li>
+<li> <%= link_to "Iniciar sesion", new_user_session_path, :class => 'navbar-link'  %></li>
 </ul>
 </div>
 </div>
-
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 
 

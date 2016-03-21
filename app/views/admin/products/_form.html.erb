@@ -27,6 +27,10 @@
     <%= f.label :marca_id %><br>
     <%= f.select :marca_id, marca_options(@marcas) %>
   </div>
+  <div class="field">
+    <%= f.label :image,"Imagen Ilustrativa" %>
+    <%= f.file_field :image %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

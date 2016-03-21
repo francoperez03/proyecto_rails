@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'principal/index'
+  devise_for :users
+  resources :users
+
 
   namespace :admin do
     resources :marcas

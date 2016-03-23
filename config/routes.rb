@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :products
+
+    get 'products_category' => 'products#index2'
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -18,12 +18,20 @@
 <ul class="menu">
 <li class="menu-text">Mercado Franco</li>
 <li><%= link_to 'Inicio', root_path %></li>
-<li><%= link_to 'Productos', admin_products_path %></li>
+<% if current_user %>
+<li><%= link_to 'Productos por marca', admin_products_path %></li>
+<li><%= link_to 'Productos por categoria', admin_products_path %></li>
+<% end %>
 </ul>
 </div>
 <div class="top-bar-right">
 <ul class="menu">
+<% if current_user %>
+<li> <%= link_to "Cerrar Sesion", destroy_user_session_path,method: :delete %></li>
+<% else %>
 <li> <%= link_to "Iniciar sesion", new_user_session_path, :class => 'navbar-link'  %></li>
+<% end %>
+
 </ul>
 </div>
 </div>

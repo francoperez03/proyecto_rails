@@ -7,7 +7,9 @@ class Admin::ProductsController < ApplicationController
   def index
     @admin_products = Admin::Product.all
   end
-
+  def index2
+    @admin_products = Admin::Product.all
+  end
   # GET /admin/products/1
   # GET /admin/products/1.json
   def show

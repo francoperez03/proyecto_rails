@@ -15,6 +15,7 @@
   </thead>
 
   <tbody>
+    <% @admin_products.order(:precio) %>
     <% @admin_products.each do |admin_product| %>
       <tr>
         <td><%= image_tag admin_product.image.url(:main) %></td>

@@ -1,6 +1,7 @@
 class Admin::Product < ActiveRecord::Base
   belongs_to :marca
   belongs_to :category
+  has_many :users, through: :carritos
 
   has_attached_file :image, styles:{ main: '300x400>', thumb:'50x50>' }
 	validates_attachment :image, :presence => true,

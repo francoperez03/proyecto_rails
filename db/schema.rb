@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322233147) do
+ActiveRecord::Schema.define(version: 20160323172836) do
+
+  create_table "admin_carritos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "product_id"
+  end
+
+  add_index "admin_carritos", ["product_id"], name: "index_admin_carritos_on_product_id"
+  add_index "admin_carritos", ["user_id"], name: "index_admin_carritos_on_user_id"
 
   create_table "admin_categories", force: :cascade do |t|
     t.string   "nombre"

@@ -9,6 +9,7 @@
       <th>Precio</th>
       <th>Description</th>
       <th>Marca</th>
+      <th>Categoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +22,8 @@
         <td><%= admin_product.precio %></td>
         <td><%= admin_product.description %></td>
         <td><%= admin_product.marca.nombre %></td>
+        <td><%= admin_product.category.nombre %></td>
+        
         <td><%= link_to 'Mostrar', admin_product %></td>
         <td><%= link_to 'Editar', edit_admin_product_path(admin_product) %></td>
         <td><%= link_to 'Eliminar', admin_product, method: :delete, data: { confirm: 'Esta seguro?' } %></td>

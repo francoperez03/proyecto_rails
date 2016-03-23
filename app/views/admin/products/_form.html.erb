@@ -28,6 +28,11 @@
     <%= f.select :marca_id, marca_options(@marcas) %>
   </div>
   <div class="field">
+    <%= f.label :category_id, "Categoria" %><br>
+    <%= f.select :category_id, category_options(@categories) %>
+  </div>
+
+  <div class="field">
     <%= f.label :image,"Imagen Ilustrativa" %>
     <%= f.file_field :image %>
   </div>

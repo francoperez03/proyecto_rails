@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :set_admin_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_marcas, only: [:new, :create, :edit, :update]
+  before_action :set_marcas_products, only: [:new, :create, :edit, :update]
 
   # GET /admin/products
   # GET /admin/products.json
@@ -63,12 +63,13 @@ class Admin::ProductsController < ApplicationController
       @admin_product = Admin::Product.find(params[:id])
     end
 
-    def set_marcas
+    def set_marcas_products
       @marcas= Admin::Marca.order(:nombre).all
+      @categories= Admin::Category.order(:nombre).all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_product_params
-      params.require(:admin_product).permit(:codigo, :precio, :description,:marca_id,:image)
+      params.require(:admin_product).permit(:codigo, :precio, :description,:marca_id,:category_id,:image)
     end
 end

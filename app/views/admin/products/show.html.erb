@@ -20,6 +20,11 @@
 </p>
 
 <p>
+  <strong>Categoria:</strong>
+  <%= @admin_product.category.nombre %>
+</p>
+
+<p>
   <strong>Imagen:</strong>
   <br>
   <%= image_tag @admin_product.image.url(:main) %>

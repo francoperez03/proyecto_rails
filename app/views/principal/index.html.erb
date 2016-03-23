@@ -7,9 +7,13 @@
   <div class="column">
   	
     <%= image_tag product.image.url(:main) %>
-    <h5><%= product.description %></h5>
-    <p><%= product.precio %></p>
+    <h5><%= product.category.nombre %></h5>
+    <h5><%= product.marca.nombre %></h5>
+    <p><%= product.description %><br>
+    <%= product.precio %></p>
+    <% if current_user %>
     <a href="#" class="button expanded">Comprar</a>
+    <% end %>
   </div>
 <% end %>
 

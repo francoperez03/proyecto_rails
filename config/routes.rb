@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
   resources :users
 
-
+  resources :marcas
+  resources :categories
   namespace :admin do
     resources :marcas
   end
@@ -12,8 +14,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
-  get 'products_category' => 'principal#por_category'
-  get 'products_marca' => 'principal#por_marca'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

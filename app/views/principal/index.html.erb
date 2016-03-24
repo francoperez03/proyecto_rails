@@ -12,7 +12,11 @@
     <h5><%= product.marca.nombre %></h5>
     <p><%= product.description %><br>
     <%= product.precio %></p>
-    <a href="#" class="button expanded">Comprar</a>
+    <% if current_user %>
+    <a href="#" class="actions">Comprar</a>
+    <% else %>
+    <a class="button expanded">Inicia sesion para comprar</a>
+    <% end %>
 
   </div>
   <% end %>

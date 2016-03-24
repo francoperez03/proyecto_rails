@@ -6,7 +6,7 @@
 <% @latest_products.each do |product| %>
   <div class="column">
   	
-    <%= image_tag product.image.url(:main) %>
+    <%= image_tag product.image.url(:medium) %>
     <h5><%= product.category.nombre %></h5>
     <h5><%= product.marca.nombre %></h5>
     <p><%= product.description %><br>
@@ -14,8 +14,9 @@
     <% if current_user %>
     <a href="#" class="button expanded">Comprar</a>
     <% end %>
+
   </div>
-<% end %>
+  <% end %>
 
 
 

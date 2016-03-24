@@ -4,7 +4,7 @@ class Admin::Product < ActiveRecord::Base
   has_many :users, through: :carritos
 
   validates :codigo , presence: {message: " no fue ingresado"} , uniqueness: {message: "ya existe"}
-  validates :precio , presence: {message: " no fue ingresado"} , numericality: {message: "no es numero"}
+  validates :precio , presence: {message: " no fue ingresado"} , numericality: {message: "debe ser un numero"}
 
   has_attached_file :image, styles:{ main: '300x400>', thumb:'50x50>' }
 	validates_attachment :image, :presence => true,

@@ -27,10 +27,10 @@
         <% if current_user %>
          <td><a class="button expanded">Comprar!</a></td>
         <% else %>
-        <td><div class="button expanded">Inicia sesion para comprar</div></td>
+        <td><div class="actions">Inicia sesion para comprar</div></td>
         <% end %>
         
-        <td><div class="button expanded"><%= link_to 'Mostrar', admin_product %></div></td>
+        <td><div class="actions"><%= link_to 'Mostrar', admin_product %></div></td>
       </tr>
     <% end %>
   </tbody>

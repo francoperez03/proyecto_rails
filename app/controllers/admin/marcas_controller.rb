@@ -1,5 +1,7 @@
 class Admin::MarcasController < ApplicationController
   before_action :set_admin_marca, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user_admin!
+  
 
 
   # GET /admin/marcas

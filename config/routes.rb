@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :user_admins
   devise_for :users
-  resources :users
+
 
   resources :marcas
   resources :categories

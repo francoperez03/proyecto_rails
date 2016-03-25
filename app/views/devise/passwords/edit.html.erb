@@ -13,12 +13,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmar nueva clave" %><br />
+    <%= f.label :password_confirmation, "Confirmar mi nueva clave" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Cambiar mi clave
+    <%= f.submit "Cambiar mi clave" %>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

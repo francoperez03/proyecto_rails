@@ -1,5 +1,5 @@
 
-<h1>Listing Admin Marcas</h1>
+<h1>Las marcas</h1>
 
 <table>
   <thead>
@@ -13,9 +13,9 @@
     <% @admin_marcas.each do |admin_marca| %>
       <tr>
         <td><%= admin_marca.nombre %></td>
-        <td><%= link_to 'Show', admin_marca %></td>
-        <td><%= link_to 'Edit', edit_admin_marca_path(admin_marca) %></td>
-        <td><%= link_to 'Destroy', admin_marca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', admin_marca %></td>
+        <td><%= link_to 'Editar', edit_admin_marca_path(admin_marca) %></td>
+        <td><%= link_to 'Eliminar', admin_marca, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Marca', new_admin_marca_path %>
+<%= link_to 'Agregar marca', new_admin_marca_path %>

@@ -4,7 +4,7 @@ class CreateAdminProducts < ActiveRecord::Migration
       t.string :codigo
       t.float :precio
       t.text :description
-      t.references :marca, index: true, foreign_key: true
+      t.references :admin_marca, index: true, foreign_key: true
 
       t.timestamps null: false
     end

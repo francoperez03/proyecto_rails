@@ -24,12 +24,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :marca_id %><br>
-    <%= f.select :marca_id, marca_options(@marcas) %>
+    <%= f.label :admin_marca_id %><br>
+    <%= f.select :admin_marca_id, marca_options(@marcas) %>
   </div>
   <div class="field">
-    <%= f.label :category_id, "Categoria" %><br>
-    <%= f.select :category_id, category_options(@categories) %>
+    <%= f.label :admin_category_id, "Categoria" %><br>
+    <%= f.select :admin_category_id, category_options(@categories) %>
   </div>
 
   <div class="field">

@@ -1,6 +1,6 @@
 class Admin::Product < ActiveRecord::Base
-  belongs_to :marca
-  belongs_to :category
+  belongs_to :admin_marca
+  belongs_to :admin_category
   has_many :users, through: :carritos
 
   validates :codigo , presence: {message: " no fue ingresado"} , uniqueness: {message: "ya existe"}

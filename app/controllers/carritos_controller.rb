@@ -1,9 +1,9 @@
 class CarritosController < ApplicationController
  def index
-    @admin_carritos = Carrito.all
+    @admin_carrito = Carrito.all
     @admin_products = Admin::Product.all
  end
-
+#------------Manera alternativa--------------------
  def show
   @agregar_carrito =  Carrito.new
   @admin_products = Admin::Product.find(params[:id])
@@ -22,10 +22,10 @@ class CarritosController < ApplicationController
     end
 
   end
+#--------------------------------------------
 
-
-
-def edit
+#------------Mejor manera--------------------
+  def edit
     @agregar_carrito =  Carrito.new(product_id: params[:id] , user_id: current_user.id )
     
 
@@ -37,6 +37,14 @@ def edit
       end
     end
 
+  end
+
+  def destroy
+    @carrito = Carrito.find(params[:id])
+    @carrito.destroy
+    respond_to do |format|
+    format.html { redirect_to carritos_url, notice: 'El producto fue eliminado del carrito.' }
+    end
   end
 
 private

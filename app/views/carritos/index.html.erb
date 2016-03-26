@@ -1,1 +1,40 @@
 <h2>Tu carrito</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Codigo</th>
+      <th>Precio</th>
+      <th>Description</th>
+      <th>Marca</th>
+      <th>Categoria</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_carrito.each do |carrito| %>
+        <% if current_user.id == carrito.user_id %>
+        <tr>
+         	<% @admin_products.each do |product| %>
+         		<% if product.id == carrito.product_id %>
+         			<td><%= image_tag product.image.url(:thumb) %></td>
+         			<td><%= product.precio %></td>
+          			<td><%= product.description %></td>
+          			<td><%= product.marca.nombre %></td>
+          			<td><%= product.category.nombre %></td>
+          		<% end %>
+          	<% end %>
+            <td><div class="actions"><%= link_to 'Eliminar del carrito', carrito, method: :delete, data: { confirm: 'Esta seguro que desea eliminar este producto?' } %></div></td>
+          </tr>
+
+
+
+        <% end %>
+    <% end %>
+
+    
+  </tbody>
+</table>
+

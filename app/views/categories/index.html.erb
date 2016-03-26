@@ -26,12 +26,11 @@
             <td><%= admin_product.marca.nombre %></td>
             <td><%= admin_product.category.nombre %></td>
             <% if current_user %>
-             <td><a class="button expanded">Comprar!</a></td>
+             <td><div class="actions"><%= link_to 'Comprar', edit_carrito_path(admin_product), data: { confirm: 'Esta seguro que desea comprar este producto?' } %></div></td>
             <% else %>
             <td><div class="actions">Inicia sesion para comprar</div></td>
             <% end %>
             
-            <td><div class="actions"><%= link_to 'Mostrar', admin_product %></div></td>
           </tr>
          <% end %>
       <% end %>

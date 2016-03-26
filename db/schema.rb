@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325131545) do
-
-  create_table "admin_carritos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "product_id"
-  end
-
-  add_index "admin_carritos", ["product_id"], name: "index_admin_carritos_on_product_id"
-  add_index "admin_carritos", ["user_id"], name: "index_admin_carritos_on_user_id"
+ActiveRecord::Schema.define(version: 20160326131143) do
 
   create_table "admin_categories", force: :cascade do |t|
     t.string   "nombre"
@@ -51,6 +41,14 @@ ActiveRecord::Schema.define(version: 20160325131545) do
 
   add_index "admin_products", ["category_id"], name: "index_admin_products_on_category_id"
   add_index "admin_products", ["marca_id"], name: "index_admin_products_on_marca_id"
+
+  create_table "carritos", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+  end
+
+  add_index "carritos", ["product_id"], name: "index_carritos_on_product_id"
+  add_index "carritos", ["user_id"], name: "index_carritos_on_user_id"
 
   create_table "user_admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

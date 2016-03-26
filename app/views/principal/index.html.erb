@@ -10,12 +10,12 @@
     </div>
     <h5><%= product.category.nombre %></h5>
     <h5><%= product.marca.nombre %></h5>
-    <p><%= product.description %><br>
-    <%= product.precio %></p>
+    Precio: <%= product.precio %></p>
     <% if current_user %>
-    <a href="#" class="button expanded">Comprar</a>
+    
+    <div class="actions"><%= link_to 'Comprar', edit_carrito_path(product) %></div>
     <% else %>
-    <a class="button expanded">Inicia sesion para comprar</a>
+    <a class="actions">Inicia sesion para comprar</a>
     <% end %>
 
   </div>

@@ -31,7 +31,7 @@ class Admin::MarcasController < ApplicationController
 
     respond_to do |format|
       if @admin_marca.save
-        format.html { redirect_to @admin_marca, notice: 'Marca was successfully created.' }
+        format.html { redirect_to @admin_marca, notice: 'La marca fue creada.' }
         format.json { render :show, status: :created, location: @admin_marca }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::MarcasController < ApplicationController
   def update
     respond_to do |format|
       if @admin_marca.update(admin_marca_params)
-        format.html { redirect_to @admin_marca, notice: 'Marca was successfully updated.' }
+        format.html { redirect_to @admin_marca, notice: 'La marca fue editada.' }
         format.json { render :show, status: :ok, location: @admin_marca }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::MarcasController < ApplicationController
   def destroy
     @admin_marca.destroy
     respond_to do |format|
-      format.html { redirect_to admin_marcas_url, notice: 'Marca was successfully destroyed.' }
+      format.html { redirect_to admin_marcas_url, notice: 'La marca fue eliminada.' }
       format.json { head :no_content }
     end
   end

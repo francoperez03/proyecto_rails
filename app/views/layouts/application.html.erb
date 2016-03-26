@@ -20,6 +20,9 @@
 <li><%= link_to 'Inicio', root_path %></li>
 <li><%= link_to 'Productos por marca', marcas_path %></li>
 <li><%= link_to 'Productos por categoria', categories_path %></li>
+<% if current_user %>
+<li><%= link_to 'Carrito', carritos_path %></li>
+<% end %>
 <% if current_user_admin %>
 <li><%= link_to 'Productos', admin_products_path %></li>
 <li><%= link_to 'Marcas', admin_marcas_path %></li>

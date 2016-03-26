@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160326131143) do
     t.string   "codigo"
     t.float    "precio"
     t.text     "description"
-    t.integer  "marca_id"
+    t.integer  "admin_marca_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 20160326131143) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+    t.integer  "marca_id"
   end
 
+  add_index "admin_products", ["admin_marca_id"], name: "index_admin_products_on_admin_marca_id"
   add_index "admin_products", ["category_id"], name: "index_admin_products_on_category_id"
   add_index "admin_products", ["marca_id"], name: "index_admin_products_on_marca_id"
 

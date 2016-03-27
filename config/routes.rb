@@ -4,17 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
 
 
+  resources :umarcas
+  resources :ucategories
   resources :marcas
   resources :categories
-  namespace :admin do
-    resources :marcas
-  end
-  namespace :admin do
-    resources :categories
-  end
-  namespace :admin do
-    resources :products
-  end
+  resources :products
 
 
   resources :carritos

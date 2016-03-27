@@ -1,41 +1,27 @@
 
-<h1>Todos los productos por categorias</h1>
+
+<h1>Categorias</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Imagen</th>
-      <th>Codigo</th>
-      <th>Precio</th>
-      <th>Description</th>
-      <th>Marca</th>
-      <th>Categoria</th>
-      <th colspan="2"></th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @admin_categories.each do |admin_categories| %>
-      <% @admin_products.each do |admin_product| %>
-         <% if admin_categories.id == admin_product.category.id %>
-          <tr>
-            <td><%= image_tag admin_product.image.url(:thumb) %></td>
-            <td><%= admin_product.codigo %></td>
-            <td><%= admin_product.precio %></td>
-            <td><%= admin_product.description %></td>
-            <td><%= admin_product.marca.nombre %></td>
-            <td><%= admin_product.category.nombre %></td>
-            <% if current_user %>
-             <td><div class="actions"><%= link_to 'Comprar', edit_carrito_path(admin_product), data: { confirm: 'Esta seguro que desea comprar este producto?' } %></div></td>
-            <% else %>
-            <td><div class="actions">Inicia sesion para comprar</div></td>
-            <% end %>
-            
-          </tr>
-         <% end %>
-      <% end %>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.nombre %></td>
+        <td><%= link_to 'Mostrar', category %></td>
+        <td><%= link_to 'Editar', edit_category_path(category) %></td>
+        <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
     <% end %>
-
-    
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'Agregar categoria', new_category_path %>

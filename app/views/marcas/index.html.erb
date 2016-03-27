@@ -1,42 +1,26 @@
 
-<h1>Todos los productos por marcas</h1>
-
+<h1>Las marcas</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Imagen</th>
-      <th>Codigo</th>
-      <th>Precio</th>
-      <th>Description</th>
-      <th>Marca</th>
-      <th>Categoria</th>
-      <th colspan="2"></th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @admin_marcas.each do |admin_marcas| %>
-      <% @admin_products.each do |admin_product| %>
-         <% if admin_marcas.id == admin_product.marca.id %>
-          <tr>
-            <td><%= image_tag admin_product.image.url(:thumb) %></td>
-            <td><%= admin_product.codigo %></td>
-            <td><%= admin_product.precio %></td>
-            <td><%= admin_product.description %></td>
-            <td><%= admin_product.marca.nombre %></td>
-            <td><%= admin_product.category.nombre %></td>
-            <% if current_user %>
-            <td><div class="actions"><%= link_to 'Comprar', edit_carrito_path(admin_product), data: { confirm: 'Esta seguro que desea comprar este producto?' } %></div></td>
-            <% else %>
-            <td><div class="actions">Inicia sesion para comprar</div></td>
-            <% end %>
-            
-          </tr>
-         <% end %>
-      <% end %>
+    <% @marcas.each do |marca| %>
+      <tr>
+        <td><%= marca.nombre %></td>
+        <td><%= link_to 'Mostrar', marca %></td>
+        <td><%= link_to 'Editar', edit_marca_path(marca) %></td>
+        <td><%= link_to 'Eliminar', marca, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
     <% end %>
-
-    
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'Agregar marca', new_marca_path %>

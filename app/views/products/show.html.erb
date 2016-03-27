@@ -1,0 +1,38 @@
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @product.codigo %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @product.precio %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @product.marca.nombre %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @product.category.nombre %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <br>
+  <%= image_tag @product.image.url(:medium) %>
+
+</p>
+
+
+<div class="actions">
+    <%= link_to 'Volver', products_path %>
+</div>
+

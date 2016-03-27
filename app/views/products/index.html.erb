@@ -1,0 +1,37 @@
+
+<h1>Todos los productos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Codigo</th>
+      <th>Precio</th>
+      <th>Description</th>
+      <th>Marca</th>
+      <th>Categoria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= image_tag product.image.url(:thumb) %></td>
+        <td><%= product.codigo %></td>
+        <td><%= product.precio %></td>
+        <td><%= product.description %></td>
+        <td><%= product.marca.nombre %></td>
+        <td><%= product.category.nombre %></td>
+        
+        <td><%= link_to 'Mostrar', product %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="actions"><%= link_to 'Nuevo producto', new_product_path %></div>

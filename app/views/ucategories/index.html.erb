@@ -1,0 +1,41 @@
+
+<h1>Todos los productos por categorias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Codigo</th>
+      <th>Precio</th>
+      <th>Description</th>
+      <th>Marca</th>
+      <th>Categoria</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |categories| %>
+      <% @products.each do |product| %>
+         <% if categories.id == product.category.id %>
+          <tr>
+            <td><%= image_tag product.image.url(:thumb) %></td>
+            <td><%= product.codigo %></td>
+            <td><%= product.precio %></td>
+            <td><%= product.description %></td>
+            <td><%= product.marca.nombre %></td>
+            <td><%= product.category.nombre %></td>
+            <% if current_user %>
+             <td><div class="actions"><%= link_to 'Comprar', edit_carrito_path(product), data: { confirm: 'Esta seguro que desea comprar este producto?' } %></div></td>
+            <% else %>
+            <td><div class="actions">Inicia sesion para comprar</div></td>
+            <% end %>
+            
+          </tr>
+         <% end %>
+      <% end %>
+    <% end %>
+
+    
+  </tbody>
+</table>

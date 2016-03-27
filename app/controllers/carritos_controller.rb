@@ -1,12 +1,12 @@
 class CarritosController < ApplicationController
  def index
-    @admin_carrito = Carrito.all
-    @admin_products = Admin::Product.all
+    @carrito = Carrito.all
+    @products = Product.all
  end
 #------------Manera alternativa--------------------
  def show
   @agregar_carrito =  Carrito.new
-  @admin_products = Admin::Product.find(params[:id])
+  @products = Product.find(params[:id])
  end
 
  def create

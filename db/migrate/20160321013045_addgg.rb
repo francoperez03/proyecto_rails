@@ -1,6 +1,6 @@
 class Addgg < ActiveRecord::Migration
   def change
-  	add_attachment :admin_products,:image
+  	add_attachment :products,:image
   end
 end
 
